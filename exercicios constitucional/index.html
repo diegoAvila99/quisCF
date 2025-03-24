@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz de Direito Constitucional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        #quiz-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .options {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f8f8f8;
+        }
+
+        button:hover {
+            background-color: #e8e8e8;
+        }
+
+        .correct {
+            background-color: #90EE90 !important;
+            border-color: #006400;
+        }
+
+        .wrong {
+            background-color: #FFB6C1 !important;
+            border-color: #8B0000;
+        }
+
+        #score {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <div class="question" id="question"></div>
+        <div class="options" id="options"></div>
+        <div id="score"></div>
+    </div>
+
+    <script>
+        const questions = [
+    {
+        question: "1-O que é constituição?",
+        answer: "Constituição é um documento essencial e imprescindível que rege a organização do Estado, além de definir os direitos fundamentais dos indivíduos e estabelecer determinados princípios e fins públicos a serem alcançados.",
+        options: [
+            "Documento que regula apenas relações internacionais",
+            "Lei ordinária que trata de questões municipais",
+            "Constituição é um documento essencial e imprescindível que rege a organização do Estado...",
+            "Regimento interno do poder legislativo"
+        ]
+    },
+    {
+        question: "2-Como foi dividido o constitucionalismo?",
+        answer: "Constitucionalismo antigo e moderno.",
+        options: [
+            "Liberal e social",
+            "Constitucionalismo antigo e moderno.",
+            "Primário e secundário",
+            "Nacional e internacional"
+        ]
+    },
+    {
+        question: "3-O que é constitucionalismo?",
+        answer: "O Constitucionalismo é um movimento que traduz uma luta ideológica e politica. Trata-se da teorização e prática em torno à limitação da arbitrariedade estatal como instrumento para a proteção e salvaguarda dos direitos do ser humano.",
+        options: [
+            "Um sistema de governo monárquico",
+            "O Constitucionalismo é um movimento que traduz uma luta ideológica e politica...",
+            "Um método de interpretação de leis",
+            "Um tipo específico de constituição"
+        ]
+    },
+    {
+        question: "4-Quais são os direitos de primeira geração/dimensão?",
+        answer: "Os direitos de primeira geração/dimensão são os direitos da individualidade, direitos ligados as liberdades individuais, sendo o objetivo dos documentos listados acima limitar o poder do Estado.",
+        options: [
+            "Direitos coletivos e difusos",
+            "Direitos trabalhistas e previdenciários",
+            "Os direitos de primeira geração/dimensão são os direitos da individualidade...",
+            "Direitos ambientais e culturais"
+        ]
+    },
+    {
+        question: "5-Qual o objetivo do Neoconstitucionalismo?",
+        answer: "Refundar o direito constitucional com base em novas premissas como a difusão e o desenvolvimento da teoria dos direitos fundamentais e a força normativa da constituição.",
+        options: [
+            "Revogar todas as constituições existentes",
+            "Refundar o direito constitucional com base em novas premissas...",
+            "Criar um sistema jurídico internacional único",
+            "Eliminar os direitos individuais em prol dos coletivos"
+        ]
+    },
+    {
+        question: "6-O que é Transconstitucionalismo?",
+        answer: "É o entrelaçamento de ordens jurídicas diversas, tanto estatais como transnacionais, internacionais e supranacionais, em torno dos mesmo problemas de natureza constitucional.",
+        options: [
+            "É o entrelaçamento de ordens jurídicas diversas...",
+            "A transferência de constituições entre países",
+            "Um método de reforma constitucional",
+            "A unificação de todas as constituições do mundo"
+        ]
+    },
+    {
+        question: "7-Como se classificam as constituições quanto ao conteúdo?",
+        answer: "Constituição formal e Constituição Material.",
+        options: [
+            "Escrita e não-escrita",
+            "Rígida e flexível",
+            "Constituição formal e Constituição Material.",
+            "Democrática e autoritária"
+        ]
+    },
+    {
+        question: "8-Explique Constituição formal.",
+        answer: "Constituição formal é dividida em dois tópicos, Constituição escrita e Supralegalidade.",
+        options: [
+            "Constituição baseada apenas em costumes",
+            "Constituição que não pode ser alterada",
+            "Constituição formal é dividida em dois tópicos...",
+            "Constituição aplicada apenas em situações emergenciais"
+        ]
+    },
+    {
+        question: "9-Explique constituição Material",
+        answer: "A constituição material é um conjunto de normas que dizem respeito ás matérias tipicamente constitutivas do Estado e da Sociedade.",
+        options: [
+            "Apenas as leis penais e processuais",
+            "A constituição material é um conjunto de normas que dizem respeito...",
+            "Regulamentos administrativos municipais",
+            "Tratados internacionais ratificados"
+        ]
+    },
+    {
+        question: "10-Como se classificam as constituições quanto a estabilidade?",
+        answer: "Rígida, Flexível, Semirrígida, Fixa e Imutável.",
+        options: [
+            "Democrática e Autoritária",
+            "Federal e Unitária",
+            "Rígida, Flexível, Semirrígida, Fixa e Imutável.",
+            "Temporária e Permanente"
+        ]
+    },
+    {
+        question: "11-Como se classificam as constituições quanto a Forma?",
+        answer: "Escritas e Costumeiras.",
+        options: [
+            "Democráticas e Autocráticas",
+            "Escritas e Costumeiras.",
+            "Unitárias e Federativas",
+            "Republicanas e Monárquicas"
+        ]
+    },
+    {
+        question: "12-Como se classificam as constituições quanto á Origem?",
+        answer: "Outorgada e Promulgada.",
+        options: [
+            "Democrática e Ditatorial",
+            "Outorgada e Promulgada.",
+            "Popular e Elitista",
+            "Tradicional e Moderna"
+        ]
+    },
+    {
+        question: "13-Como se classificam as constituições quanto á Extensão?",
+        answer: "Sintéticas ou Analíticas.",
+        options: [
+            "Sintéticas ou Analíticas.",
+            "Breves ou Longas",
+            "Geral ou Específica",
+            "Unitária ou Federal"
+        ]
+    },
+    {
+        question: "14-Como se classificam as constituições quanto ao modo de Elaboração?",
+        answer: "Método Dogmático e Histórica.",
+        options: [
+            "Democrática e Autocrática",
+            "Método Dogmático e Histórica.",
+            "Popular e Técnica",
+            "Rápida e Demorada"
+        ]
+    },
+    {
+        question: "15-O que é uma Constituição Dogmática?",
+        answer: "Uma constituição sistemática que consolida os dogmas fundamentais do Estado.",
+        options: [
+            "Uma constituição baseada em costumes",
+            "Uma constituição sistemática que consolida os dogmas fundamentais do Estado.",
+            "Uma constituição provisória",
+            "Uma constituição internacional"
+        ]
+    },
+    {
+        question: "16-Como é o processo de emendas em uma constituição dogmática?",
+        answer: "O processo de emendas costuma ser mais formal e difícil, com a intenção de garantir estabilidade política.",
+        options: [
+            "Pode ser alterada por qualquer lei ordinária",
+            "O processo de emendas costuma ser mais formal e difícil...",
+            "Pode ser alterada por plebiscito popular anual",
+            "Não pode ser alterada em nenhuma hipótese"
+        ]
+    },
+    {
+        question: "17-Como é uma Constituição Histórica?",
+        answer: "É baseada em eventos históricos e contextos específicos.",
+        options: [
+            "É baseada em eventos históricos e contextos específicos.",
+            "É criada por assembleias constituintes",
+            "É imposta por governantes autoritários",
+            "É copiada de outros países"
+        ]
+    },
+    {
+        question: "18-Qual é a característica marcante das constituições Históricas?",
+        answer: "Elas não têm uma única origem ou ato formal de criação, emergindo de decisões que se consolidam ao longo dos anos.",
+        options: [
+            "São sempre escritas em um único documento",
+            "Elas não têm uma única origem ou ato formal de criação...",
+            "São criadas por governantes autoritários",
+            "Podem ser alteradas diariamente"
+        ]
+    },
+    {
+        question: "19-O que é Ontologia constitucional?",
+        answer: "Refere-se ao estudo da 'natureza' e da 'estrutura' das normas constitucionais.",
+        options: [
+            "O estudo da história das constituições",
+            "Refere-se ao estudo da 'natureza' e da 'estrutura' das normas constitucionais.",
+            "A prática de reforma constitucional",
+            "A comparação entre constituições de diferentes países"
+        ]
+    },
+    {
+        question: "20-Qual a distinção entre normas constitucionais e infraconstitucionais?",
+        answer: "Constitucionais emanam da constituição e possuem Supralegalidade, Infraconstitucionais derivam da constituição.",
+        options: [
+            "Constitucionais são temporárias, infraconstitucionais permanentes",
+            "Constitucionais emanam da constituição e possuem Supralegalidade...",
+            "Não há diferença prática entre elas",
+            "Infraconstitucionais são mais importantes que constitucionais"
+        ]
+    },
+    {
+        question: "21-O que são normas constitucionais de eficácia plena, contida e limitada?",
+        answer: "Plenas: exercem poder imediato; Contidas: podem ser limitadas; Limitadas: dependem de regulamentação.",
+        options: [
+            "Plenas: exercem poder imediato; Contidas: podem ser limitadas; Limitadas: dependem de regulamentação.",
+            "São todas iguais, apenas com nomes diferentes",
+            "Plenas: nunca podem ser aplicadas; Contidas: às vezes; Limitadas: sempre",
+            "Diferentes formas de revogar normas constitucionais"
+        ]
+    },
+    {
+        question: "22-Qual a diferença principal entre norma de eficácia contida e norma de eficácia limitada?",
+        answer: "A possibilidade de restrição ou necessidade de regulamentação posterior para que a norma tenha pleno efeito.",
+        options: [
+            "Não há diferença entre elas",
+            "A possibilidade de restrição ou necessidade de regulamentação posterior...",
+            "Uma é federal, a outra estadual",
+            "Uma é permanente, a outra temporária"
+        ]
+    },
+    {
+        question: "23-Quais as características principais norma eficácia contida?",
+        answer: "Pode produzir efeitos á partir de sua publicação, mas pode ser limitada via normas infraconstitucionais.",
+        options: [
+            "Só vale para o poder executivo",
+            "Pode produzir efeitos á partir de sua publicação, mas pode ser limitada...",
+            "Não pode ser aplicada em nenhum caso",
+            "Vale apenas para relações internacionais"
+        ]
+    },
+    {
+        question: "24-Quais as características principais norma eficácia limitada?",
+        answer: "Necessita de regulamentação posterior (Norma infraconstitucional) para que seus efeitos possam ser completamente realizados.",
+        options: [
+            "Necessita de regulamentação posterior...",
+            "Pode ser aplicada imediatamente sem restrições",
+            "Só vale para o poder judiciário",
+            "Pode ser revogada por qualquer cidadão"
+        ]
+    },
+    {
+        question: "25-Explique Princípio da Supremacia da Constituição?",
+        answer: "A Constituição ocupa o topo da pirâmide normativa, sendo a norma superior a todas as demais no ordenamento jurídico.",
+        options: [
+            "A Constituição pode ser alterada por qualquer lei",
+            "A Constituição ocupa o topo da pirâmide normativa...",
+            "A Constituição tem valor igual às outras leis",
+            "A Constituição só vale para o poder executivo"
+        ]
+    },
+    {
+        question: "26-Qual é a teoria da Pirâmide Normativa (HANS KELSEN)?",
+        answer: "A pirâmide de Kelsen organiza as normas de acordo com suas respectivas hierarquias sendo considerada a Constituição o nível mais alto desta representação.",
+        options: [
+            "Teoria que iguala todas as normas jurídicas",
+            "A pirâmide de Kelsen organiza as normas de acordo com suas respectivas hierarquias...",
+            "Teoria que defende a supremacia das leis municipais",
+            "Modelo que coloca os tratados internacionais acima da constituição"
+        ]
+    }
+];
+
+        let currentQuestion = 0;
+        let score = 0;
+        const questionElement = document.getElementById('question');
+        const optionsElement = document.getElementById('options');
+        const scoreElement = document.getElementById('score');
+
+        function showQuestion() {
+            const q = questions[currentQuestion];
+            questionElement.innerHTML = q.question;
+            optionsElement.innerHTML = '';
+            
+            q.options.sort(() => Math.random() - 0.5).forEach(option => {
+                const button = document.createElement('button');
+                button.innerHTML = option;
+                button.onclick = () => checkAnswer(option);
+                optionsElement.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selected) {
+            const buttons = document.querySelectorAll('#options button');
+            buttons.forEach(button => {
+                button.disabled = true;
+                if(button.innerHTML === questions[currentQuestion].answer) {
+                    button.classList.add('correct');
+                } else if(button.innerHTML === selected) {
+                    button.classList.add('wrong');
+                }
+            });
+
+            if(selected === questions[currentQuestion].answer) {
+                score++;
+            }
+
+            scoreElement.innerHTML = `Pontuação: ${score}/${questions.length}`;
+            
+            setTimeout(() => {
+                currentQuestion++;
+                if(currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    questionElement.innerHTML = "Quiz Concluído!";
+                    optionsElement.innerHTML = '';
+                }
+            }, 2000);
+        }
+
+        // Iniciar quiz
+        showQuestion();
+    </script>
+</body>
+</html>
