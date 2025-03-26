@@ -330,7 +330,7 @@ function showQuestion() {
 }
 
 function startTimer() {
-    timeLeft = 30;
+    timeLeft = 60;
     const timerElement = document.getElementById('timer');
     timerElement.textContent = `Tempo restante: ${timeLeft}s`;
     
