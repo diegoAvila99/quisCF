@@ -125,7 +125,7 @@ function checkAnswer(selected) {
     } else {
       endQuiz();
     }
-  }, 2000);
+  }, 6000);
 }
 
 // Finaliza o quiz e exibe o resultado
