@@ -1,7 +1,7 @@
 let currentQuestion = 0;
 let score = 0;
 let timer;
-let timeLeft = 60;
+let timeLeft = 90;
 let questions = []; // Array a ser atribuído conforme a matéria selecionada
 
 // Elementos da página
@@ -80,7 +80,7 @@ function showQuestion() {
 
 // Inicia o timer para a questão
 function startTimer() {
-  timeLeft = 60;
+  timeLeft = 120;
   const timerElement = document.getElementById('timer');
   timerElement.textContent = `Tempo restante: ${timeLeft}s`;
   
@@ -125,7 +125,7 @@ function checkAnswer(selected) {
     } else {
       endQuiz();
     }
-  }, 6000);
+  }, 10000);
 }
 
 // Finaliza o quiz e exibe o resultado
