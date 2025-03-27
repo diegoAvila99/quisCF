@@ -1032,6 +1032,310 @@ window.questionsromano = [
       "Não há distinção entre eles no Direito Romano."
     ],
     correct: "Jus publicum trata do interesse coletivo e jus privatum do interesse individual."
+  },
+     {
+    question: "1. Como se manifesta o 'jus facultas agendi' na prática do Direito Romano?",
+    answer: "O 'jus facultas agendi' manifesta-se como a faculdade de agir, permitindo ao indivíduo exercer direitos como o jus fruendi (de usufruir), o jus vendendi (de vender) ou o jus distrahendi (de distrair), ou seja, a capacidade de agir conforme seus interesses.",
+    options: [
+      "É a obrigação de seguir as leis sem exceção.",
+      "Permite a prática de ações sem limites legais.",
+      "É a faculdade de agir, como usufruir, vender ou distrair, conforme os interesses individuais.",
+      "É um conjunto de regras rígidas sem espaço para interpretação."
+    ],
+    correct: "É a faculdade de agir, como usufruir, vender ou distrair, conforme os interesses individuais."
+  },
+  {
+    question: "2. Qual a distinção entre 'jus scriptum' e 'jus non scriptum' segundo Justiniano?",
+    answer: "Jus scriptum é o direito formalmente escrito, composto por leis, plebiscitos, senatus consultos, editos dos magistrados, constituições imperiais e responsa dos jurisconsultos; jus non scriptum é o direito consuetudinário, confirmado pelo uso prolongado e pelo consenso do povo.",
+    options: [
+      "Jus scriptum é oral e jus non scriptum é escrito.",
+      "Jus scriptum é o direito escrito e jus non scriptum é o direito costumeiro.",
+      "Ambos se referem ao direito divino, sem distinção.",
+      "Jus scriptum se aplica apenas aos patrícios e jus non scriptum aos plebeus."
+    ],
+    correct: "Jus scriptum é o direito escrito e jus non scriptum é o direito costumeiro."
+  },
+  {
+    question: "3. O que caracteriza o 'jus honorarium' no Direito Romano?",
+    answer: "O jus honorarium é o conjunto de normas derivadas dos editos dos magistrados, especialmente dos pretores, que tinham o poder de editar regras para suprir, corrigir ou complementar o jus civile, atendendo ao interesse público.",
+    options: [
+      "É o direito que provém exclusivamente dos costumes.",
+      "São as normas estabelecidas pelo Senado sem intervenção dos magistrados.",
+      "Conjunto de normas dos editos dos magistrados que complementavam o jus civile.",
+      "É um direito reservado somente aos imperadores."
+    ],
+    correct: "Conjunto de normas dos editos dos magistrados que complementavam o jus civile."
+  },
+  {
+    question: "4. Como se diferencia o 'jus commune' do 'jus singulare'?",
+    answer: "O jus commune aplica-se de forma geral a toda a coletividade, enquanto o jus singulare se refere a preceitos específicos, destinados a situações ou categorias particulares de pessoas.",
+    options: [
+      "Jus commune é exclusivo dos patrícios e jus singulare dos plebeus.",
+      "Jus commune é aplicado a todos, enquanto o jus singulare é específico para certas situações.",
+      "Jus commune é o direito oral e jus singulare o direito escrito.",
+      "Não há diferença, pois ambos significam o mesmo."
+    ],
+    correct: "Jus commune é aplicado a todos, enquanto o jus singulare é específico para certas situações."
+  },
+  {
+    question: "5. Na classificação bipartida de Gaio, qual a diferença entre 'jus gentium' e 'jus civile'?",
+    answer: "Segundo Gaio, o jus gentium é o conjunto de regras que se aplicam universalmente a todos os povos, representando um direito natural, enquanto o jus civile é o direito próprio de cada civitas, adaptado às suas particularidades.",
+    options: [
+      "Jus gentium se aplica apenas aos estrangeiros e jus civile aos cidadãos romanos.",
+      "Jus gentium é o direito natural universal e jus civile é o direito específico de cada Estado.",
+      "Jus gentium é oral e jus civile é escrito.",
+      "Jus gentium é o direito religioso e jus civile é o direito secular."
+    ],
+    correct: "Jus gentium é o direito natural universal e jus civile é o direito específico de cada Estado."
+  },
+  {
+    question: "6. Compare as classificações tripartidas de Ulpiano e Hermogeniano quanto ao 'jus naturale'.",
+    answer: "Ulpiano define o jus naturale como o direito comum ao homem e até aos animais, enquanto Hermogeniano o vê como um direito primitivo, correspondente a uma época em que se ignoravam instituições modernas como a guerra e a propriedade.",
+    options: [
+      "Ambos definem o jus naturale de forma idêntica.",
+      "Ulpiano o define como direito comum, enquanto Hermogeniano o relaciona a uma era primitiva sem guerra e propriedade.",
+      "Ulpiano não utiliza o conceito, enquanto Hermogeniano o introduz.",
+      "Hermogeniano considera o jus naturale como parte do jus civile, enquanto Ulpiano não."
+    ],
+    correct: "Ulpiano o define como direito comum, enquanto Hermogeniano o relaciona a uma era primitiva sem guerra e propriedade."
+  },
+  {
+    question: "7. Qual a importância dos 'praecepta juris' de Ulpiano no Direito Romano?",
+    answer: "Os 'praecepta juris' estabelecem princípios fundamentais – viver honestamente, não prejudicar o outro e dar a cada um o que lhe é devido – servindo como base moral e ética para a aplicação e interpretação das leis.",
+    options: [
+      "São regras secundárias sem grande impacto na prática jurídica.",
+      "São preceitos que apenas os patrícios deviam seguir.",
+      "Estabelecem princípios morais que fundamentam a justiça e a ética na aplicação da lei.",
+      "Foram substituídos pelos edicta dos magistrados durante o Império."
+    ],
+    correct: "Estabelecem princípios morais que fundamentam a justiça e a ética na aplicação da lei."
+  },
+  {
+    question: "8. Como a 'aequitas' ajudava na adaptação da lei às circunstâncias concretas?",
+    answer: "A 'aequitas' servia para suprir as lacunas, excessos ou omissões da lei escrita, permitindo aos magistrados adaptarem as normas aos casos particulares e, assim, assegurar uma aplicação mais justa e equilibrada.",
+    options: [
+      "Ela permitia que a lei fosse aplicada de forma automática sem interpretação.",
+      "Substituía completamente a lei escrita em todos os casos.",
+      "Permitindo a adaptação da lei aos casos concretos, corrigindo suas limitações.",
+      "Era usada apenas em matérias religiosas, sem impacto na legislação civil."
+    ],
+    correct: "Permitindo a adaptação da lei aos casos concretos, corrigindo suas limitações."
+  },
+  {
+    question: "9. O que Ulpiano quis dizer com sua definição de 'jurisprudentia'?",
+    answer: "Ulpiano definiu jurisprudência como o conhecimento das coisas divinas e humanas, a ciência do justo e do injusto, enfatizando a dimensão ética e prática do Direito Romano.",
+    options: [
+      "Que jurisprudentia é apenas a soma de leis sem interpretação.",
+      "Que é a capacidade de aplicar as leis de forma rígida.",
+      "Que é o conhecimento abrangente sobre o que é justo e injusto, tanto em termos divinos quanto humanos.",
+      "Que se trata de um conjunto de decretos emitidos pelos magistrados."
+    ],
+    correct: "Que é o conhecimento abrangente sobre o que é justo e injusto, tanto em termos divinos quanto humanos."
+  },
+  {
+    question: "10. Como o Direito Romano classificava o direito objetivo quanto ao interesse, diferenciando 'jus publicum' e 'jus privatum'?",
+    answer: "O jus publicum refere-se ao direito relacionado à organização e funcionamento do Estado e da coletividade, enquanto o jus privatum trata das relações individuais e dos interesses particulares dos cidadãos.",
+    options: [
+      "Jus publicum é o direito dos deuses e jus privatum o direito dos homens.",
+      "Jus publicum trata do interesse coletivo e jus privatum do interesse individual.",
+      "Jus publicum é escrito e jus privatum é costumeiro.",
+      "Não há distinção entre eles no Direito Romano."
+    ],
+    correct: "Jus publicum trata do interesse coletivo e jus privatum do interesse individual."
+  },
+    {
+        "pergunta": "Qual é o significado da expressão 'Jus est ars boni et aequi' de Celso?",
+        "resposta": "O Direito é a arte do bom e do justo."
+    },
+    {
+        "pergunta": "O que significa 'aequum' em latim?",
+        "resposta": "Justo."
+    },
+    {
+        "pergunta": "Como é definida 'aequitas' no contexto do Direito Romano?",
+        "resposta": "Justiça em sentido ideal."
+    },
+    {
+        "pergunta": "Qual é a definição de justiça segundo Ulpiano?",
+        "resposta": "Vontade constante e perpétua de dar a cada um o que é seu."
+    },
+    {
+        "pergunta": "O que significa a expressão 'Summum jus, summa injuria'?",
+        "resposta": "O excesso de justiça é a maior das injustiças."
+    },
+    {
+        "pergunta": "Quais são os três preceitos do direito segundo Ulpiano?",
+        "resposta": "Viver honestamente, não prejudicar o outro e dar a cada um o que é seu."
+    },
+    {
+        "pergunta": "Como Ulpiano define 'jurisprudência'?",
+        "resposta": "Conhecimento das coisas divinas e humanas, ciência do justo e do injusto."
+    },
+    {
+        "pergunta": "O que significa 'jus scriptum'?",
+        "resposta": "Direito escrito."
+    },
+    {
+        "pergunta": "O que é 'jus non scriptum'?",
+        "resposta": "Direito não escrito, baseado nos costumes."
+    },
+    {
+        "pergunta": "Qual é a diferença entre 'jus civile' e 'jus honorarium'?",
+        "resposta": "'Jus civile' é o direito civil próprio de cada civitas; 'jus honorarium' é o direito criado pelos magistrados para complementar ou corrigir o direito civil."
+    },
+    {
+        "pergunta": "O que significa 'jus commune'?",
+        "resposta": "Direito comum aplicável a toda a coletividade."
+    },
+    {
+        "pergunta": "Como é definido 'jus singulare'?",
+        "resposta": "Preceitos aplicáveis a situações específicas ou categorias particulares."
+    },
+    {
+        "pergunta": "Qual é a distinção entre 'jus publicum' e 'jus privatum'?",
+        "resposta": "'Jus publicum' refere-se ao direito relacionado ao Estado; 'jus privatum' ao direito relacionado aos indivíduos."
+    },
+    {
+        "pergunta": "O que é 'jus naturale' na classificação de Ulpiano?",
+        "resposta": "Direito comum ao homem e aos animais."
+    },
+    {
+        "pergunta": "Como Hermogeniano define 'jus naturale'?",
+        "resposta": "Direito primitivo correspondente a uma época em que se ignorava a guerra e a propriedade."
+    },
+    {
+        "pergunta": "O que significa 'fas' no contexto do Direito Romano?",
+        "resposta": "Direito de origem divina que rege as relações entre os homens e os deuses."
+    },
+    {
+        "pergunta": "Qual é a origem etimológica da palavra 'jus' segundo Ulpiano?",
+        "resposta": "Deriva de 'justitia'."
+    },
+    {
+        "pergunta": "Como se define 'prudentia' no contexto romano?",
+        "resposta": "Ciência ou conhecimento."
+    },
+    {
+        "pergunta": "O que significa 'interpretatio prudentium'?",
+        "resposta": "Interpretação dos jurisconsultos."
+    },
+    {
+        "pergunta": "Qual é a tradução de 'honeste vivere'?",
+        "resposta": "Viver honestamente."
+    },
+    {
+        "pergunta": "O que significa 'alterum non laedere'?",
+        "resposta": "Não prejudicar o outro."
+    },
+  {
+    "question": "1. Qual é o significado da expressão 'Jus est ars boni et aequi'?",
+    "answer": "O Direito é a arte do bom e do justo.",
+    "options": [
+      "O Direito é a ciência das leis.",
+      "O Direito é a arte do bom e do justo.",
+      "O Direito é a vontade do legislador.",
+      "O Direito é a prática da justiça social."
+    ],
+    "correct": "O Direito é a arte do bom e do justo."
+  },
+  {
+    "question": "2. O que significa 'aequitas' no contexto do Direito Romano?",
+    "answer": "Justiça em sentido ideal.",
+    "options": [
+      "Lei escrita.",
+      "Costume jurídico.",
+      "Justiça em sentido ideal.",
+      "Poder do magistrado."
+    ],
+    "correct": "Justiça em sentido ideal."
+  },
+  {
+    "question": "3. Como Ulpiano define 'jurisprudentia'?",
+    "answer": "Conhecimento das coisas divinas e humanas, ciência do justo e do injusto.",
+    "options": [
+      "Estudo das leis civis.",
+      "Conhecimento das coisas divinas e humanas, ciência do justo e do injusto.",
+      "Prática jurídica nos tribunais.",
+      "Interpretação dos textos legais."
+    ],
+    "correct": "Conhecimento das coisas divinas e humanas, ciência do justo e do injusto."
+  },
+  {
+    "question": "4. Quais são os três preceitos do direito segundo Ulpiano?",
+    "answer": "Viver honestamente, não prejudicar o outro e dar a cada um o que é seu.",
+    "options": [
+      "Obedecer às leis, respeitar os magistrados e pagar tributos.",
+      "Viver honestamente, não prejudicar o outro e dar a cada um o que é seu.",
+      "Buscar a verdade, agir com coragem e promover a paz.",
+      "Estudar o direito, praticar a justiça e ensinar os outros."
+    ],
+    "correct": "Viver honestamente, não prejudicar o outro e dar a cada um o que é seu."
+  },
+  {
+    "question": "5. O que significa 'Summum jus, summa injuria'?",
+    "answer": "O excesso de justiça é a maior das injustiças.",
+    "options": [
+      "A justiça suprema leva à suprema felicidade.",
+      "O excesso de justiça é a maior das injustiças.",
+      "A lei é sempre justa.",
+      "A injustiça prevalece sobre a justiça extrema."
+    ],
+    "correct": "O excesso de justiça é a maior das injustiças."
+  },
+  {
+    "question": "6. Qual é a distinção entre 'jus civile' e 'jus gentium'?",
+    "answer": "Jus civile é o direito aplicável aos cidadãos romanos; jus gentium é o direito comum a todos os povos.",
+    "options": [
+      "Jus civile é o direito dos magistrados; jus gentium é o direito dos sacerdotes.",
+      "Jus civile é o direito aplicável aos cidadãos romanos; jus gentium é o direito comum a todos os povos.",
+      "Jus civile é o direito escrito; jus gentium é o direito consuetudinário.",
+      "Jus civile é o direito público; jus gentium é o direito privado."
+    ],
+    "correct": "Jus civile é o direito aplicável aos cidadãos romanos; jus gentium é o direito comum a todos os povos."
+  },
+  {
+    "question": "7. O que significa 'jus naturale'?",
+    "answer": "Direito natural comum a todos os seres vivos.",
+    "options": [
+      "Direito criado pelos homens.",
+      "Direito estabelecido pelo Estado.",
+      "Direito natural comum a todos os seres vivos.",
+      "Direito exclusivo dos cidadãos romanos."
+    ],
+    "correct": "Direito natural comum a todos os seres vivos."
+  },
+  {
+    "question": "8. Como se define 'jus honorarium'?",
+    "answer": "Direito criado pelos magistrados para auxiliar, corrigir ou suplementar o direito civil.",
+    "options": [
+      "Direito dos sacerdotes.",
+      "Direito consuetudinário.",
+      "Direito criado pelos magistrados para auxiliar, corrigir ou suplementar o direito civil.",
+      "Direito das honras e títulos nobiliárquicos."
+    ],
+    "correct": "Direito criado pelos magistrados para auxiliar, corrigir ou suplementar o direito civil."
+  },
+  {
+    "question": "9. O que é 'actio' no Direito Romano?",
+    "answer": "Instrumento jurídico pelo qual se busca em juízo o que é devido.",
+    "options": [
+      "Contrato entre partes.",
+      "Instrumento jurídico pelo qual se busca em juízo o que é devido.",
+      "Lei promulgada pelo Senado.",
+      "Decisão proferida por um magistrado."
+    ],
+    "correct": "Instrumento jurídico pelo qual se busca em juízo o que é devido."
+  },
+  {
+    "question": "10. Qual é o significado de 'obligatio'?",
+    "answer": "Vínculo jurídico que obriga alguém a cumprir uma prestação em favor de outrem.",
+    "options": [
+      "Direito de propriedade.",
+      "Vínculo jurídico que obriga alguém a cumprir uma prestação em favor de outrem.",
+      "Acordo mútuo entre partes.",
+      "Sanção imposta pelo Estado."
+    ],
+    "correct": "Vínculo jurídico que obriga alguém a cumprir uma prestação em favor de outrem."
   }
   ];
   
