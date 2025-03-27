@@ -922,6 +922,116 @@ window.questionsromano = [
           "Significam basicamente a mesma coisa e podem ser usados de forma intercambiável."
         ],
         correct: "São fundamentais para diferenciar as normas de origem humana e divina, moldando a organização jurídica romana."
-      }
+      },
+    {
+    question: "1. Como se manifesta o 'jus facultas agendi' na prática do Direito Romano?",
+    answer: "O 'jus facultas agendi' manifesta-se como a faculdade de agir, permitindo ao indivíduo exercer direitos como o jus fruendi (de usufruir), o jus vendendi (de vender) ou o jus distrahendi (de distrair), ou seja, a capacidade de agir conforme seus interesses.",
+    options: [
+      "É a obrigação de seguir as leis sem exceção.",
+      "Permite a prática de ações sem limites legais.",
+      "É a faculdade de agir, como usufruir, vender ou distrair, conforme os interesses individuais.",
+      "É um conjunto de regras rígidas sem espaço para interpretação."
+    ],
+    correct: "É a faculdade de agir, como usufruir, vender ou distrair, conforme os interesses individuais."
+  },
+  {
+    question: "2. Qual a distinção entre 'jus scriptum' e 'jus non scriptum' segundo Justiniano?",
+    answer: "Jus scriptum é o direito formalmente escrito, composto por leis, plebiscitos, senatus consultos, editos dos magistrados, constituições imperiais e responsa dos jurisconsultos; jus non scriptum é o direito consuetudinário, confirmado pelo uso prolongado e pelo consenso do povo.",
+    options: [
+      "Jus scriptum é oral e jus non scriptum é escrito.",
+      "Jus scriptum é o direito escrito e jus non scriptum é o direito costumeiro.",
+      "Ambos se referem ao direito divino, sem distinção.",
+      "Jus scriptum se aplica apenas aos patrícios e jus non scriptum aos plebeus."
+    ],
+    correct: "Jus scriptum é o direito escrito e jus non scriptum é o direito costumeiro."
+  },
+  {
+    question: "3. O que caracteriza o 'jus honorarium' no Direito Romano?",
+    answer: "O jus honorarium é o conjunto de normas derivadas dos editos dos magistrados, especialmente dos pretores, que tinham o poder de editar regras para suprir, corrigir ou complementar o jus civile, atendendo ao interesse público.",
+    options: [
+      "É o direito que provém exclusivamente dos costumes.",
+      "São as normas estabelecidas pelo Senado sem intervenção dos magistrados.",
+      "Conjunto de normas dos editos dos magistrados que complementavam o jus civile.",
+      "É um direito reservado somente aos imperadores."
+    ],
+    correct: "Conjunto de normas dos editos dos magistrados que complementavam o jus civile."
+  },
+  {
+    question: "4. Como se diferencia o 'jus commune' do 'jus singulare'?",
+    answer: "O jus commune aplica-se de forma geral a toda a coletividade, enquanto o jus singulare se refere a preceitos específicos, destinados a situações ou categorias particulares de pessoas.",
+    options: [
+      "Jus commune é exclusivo dos patrícios e jus singulare dos plebeus.",
+      "Jus commune é aplicado a todos, enquanto o jus singulare é específico para certas situações.",
+      "Jus commune é o direito oral e jus singulare o direito escrito.",
+      "Não há diferença, pois ambos significam o mesmo."
+    ],
+    correct: "Jus commune é aplicado a todos, enquanto o jus singulare é específico para certas situações."
+  },
+  {
+    question: "5. Na classificação bipartida de Gaio, qual a diferença entre 'jus gentium' e 'jus civile'?",
+    answer: "Segundo Gaio, o jus gentium é o conjunto de regras que se aplicam universalmente a todos os povos, representando um direito natural, enquanto o jus civile é o direito próprio de cada civitas, adaptado às suas particularidades.",
+    options: [
+      "Jus gentium se aplica apenas aos estrangeiros e jus civile aos cidadãos romanos.",
+      "Jus gentium é o direito natural universal e jus civile é o direito específico de cada Estado.",
+      "Jus gentium é oral e jus civile é escrito.",
+      "Jus gentium é o direito religioso e jus civile é o direito secular."
+    ],
+    correct: "Jus gentium é o direito natural universal e jus civile é o direito específico de cada Estado."
+  },
+  {
+    question: "6. Compare as classificações tripartidas de Ulpiano e Hermogeniano quanto ao 'jus naturale'.",
+    answer: "Ulpiano define o jus naturale como o direito comum ao homem e até aos animais, enquanto Hermogeniano o vê como um direito primitivo, correspondente a uma época em que se ignoravam instituições modernas como a guerra e a propriedade.",
+    options: [
+      "Ambos definem o jus naturale de forma idêntica.",
+      "Ulpiano o define como direito comum, enquanto Hermogeniano o relaciona a uma era primitiva sem guerra e propriedade.",
+      "Ulpiano não utiliza o conceito, enquanto Hermogeniano o introduz.",
+      "Hermogeniano considera o jus naturale como parte do jus civile, enquanto Ulpiano não."
+    ],
+    correct: "Ulpiano o define como direito comum, enquanto Hermogeniano o relaciona a uma era primitiva sem guerra e propriedade."
+  },
+  {
+    question: "7. Qual a importância dos 'praecepta juris' de Ulpiano no Direito Romano?",
+    answer: "Os 'praecepta juris' estabelecem princípios fundamentais – viver honestamente, não prejudicar o outro e dar a cada um o que lhe é devido – servindo como base moral e ética para a aplicação e interpretação das leis.",
+    options: [
+      "São regras secundárias sem grande impacto na prática jurídica.",
+      "São preceitos que apenas os patrícios deviam seguir.",
+      "Estabelecem princípios morais que fundamentam a justiça e a ética na aplicação da lei.",
+      "Foram substituídos pelos edicta dos magistrados durante o Império."
+    ],
+    correct: "Estabelecem princípios morais que fundamentam a justiça e a ética na aplicação da lei."
+  },
+  {
+    question: "8. Como a 'aequitas' ajudava na adaptação da lei às circunstâncias concretas?",
+    answer: "A 'aequitas' servia para suprir as lacunas, excessos ou omissões da lei escrita, permitindo aos magistrados adaptarem as normas aos casos particulares e, assim, assegurar uma aplicação mais justa e equilibrada.",
+    options: [
+      "Ela permitia que a lei fosse aplicada de forma automática sem interpretação.",
+      "Substituía completamente a lei escrita em todos os casos.",
+      "Permitindo a adaptação da lei aos casos concretos, corrigindo suas limitações.",
+      "Era usada apenas em matérias religiosas, sem impacto na legislação civil."
+    ],
+    correct: "Permitindo a adaptação da lei aos casos concretos, corrigindo suas limitações."
+  },
+  {
+    question: "9. O que Ulpiano quis dizer com sua definição de 'jurisprudentia'?",
+    answer: "Ulpiano definiu jurisprudência como o conhecimento das coisas divinas e humanas, a ciência do justo e do injusto, enfatizando a dimensão ética e prática do Direito Romano.",
+    options: [
+      "Que jurisprudentia é apenas a soma de leis sem interpretação.",
+      "Que é a capacidade de aplicar as leis de forma rígida.",
+      "Que é o conhecimento abrangente sobre o que é justo e injusto, tanto em termos divinos quanto humanos.",
+      "Que se trata de um conjunto de decretos emitidos pelos magistrados."
+    ],
+    correct: "Que é o conhecimento abrangente sobre o que é justo e injusto, tanto em termos divinos quanto humanos."
+  },
+  {
+    question: "10. Como o Direito Romano classificava o direito objetivo quanto ao interesse, diferenciando 'jus publicum' e 'jus privatum'?",
+    answer: "O jus publicum refere-se ao direito relacionado à organização e funcionamento do Estado e da coletividade, enquanto o jus privatum trata das relações individuais e dos interesses particulares dos cidadãos.",
+    options: [
+      "Jus publicum é o direito dos deuses e jus privatum o direito dos homens.",
+      "Jus publicum trata do interesse coletivo e jus privatum do interesse individual.",
+      "Jus publicum é escrito e jus privatum é costumeiro.",
+      "Não há distinção entre eles no Direito Romano."
+    ],
+    correct: "Jus publicum trata do interesse coletivo e jus privatum do interesse individual."
+  }
   ];
   
