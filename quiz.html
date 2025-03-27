@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prova</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="xp-section">
+    <div class="xp-container">
+      <div class="xp-bar">
+        <div class="xp-fill"></div>
+      </div>
+      <div class="xp-level">Nível 1</div>
+    </div>
+  </div>
+  <div id="quiz-container">
+    <div class="quiz-header">
+      <h1 id="quiz-title">Prova</h1>
+      <p>Prepare-se para testar seus conhecimentos</p>
+    </div>
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
+    <div id="score"></div>
+    <div class="buttons-container">
+      <button id="restart-btn" class="restart-btn">Reiniciar</button>
+      <button id="back-btn" class="back-btn">Voltar</button>
+    </div>
+  </div>
+
+  <!-- Carrega as questões primeiro -->
+  <script src="qconstitucional.js"></script>
+  <script src="qromano.js"></script>
+
+  <!-- Lógica do quiz -->
+  <script>
+    // Variáveis globais
+    let currentQuestion = 0;
+    let score = 0;
+    let timer;
+    let timeLeft = 60;
+    let questions = [];
+    let xp = 0;               // Novo: sistema de XP
+    let level = 1;            // Novo: sistema de níveis
+    const XP_PER_QUESTION = 15; // Novo: XP por resposta correta
+
+    // Elementos da página
+    const questionElement = document.getElementById('question');
+    const optionsElement = document.getElementById('options');
+    const scoreElement = document.getElementById('score');
+
+// Função para embaralhar arrays (Algoritmo Fisher-Yates)
+    function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// Função para atualizar a barra de XP (NOVO)
+    function updateXPDisplay() {
+      const xpNeeded = level * 100; // 100 XP por nível
+      const xpFill = document.querySelector('.xp-fill');
+      const xpLevel = document.querySelector('.xp-level');
+      
+      xpFill.style.width = `${Math.min((xp / xpNeeded) * 100, 100)}%`;
+      xpLevel.textContent = `Nível ${level}`;
+
+      // Verifica se subiu de nível
+      if (xp >= xpNeeded) {
+        level++;
+        xp = xp - xpNeeded;
+        localStorage.setItem('quizProgress', JSON.stringify({ xp, level }));
+        alert(`Parabéns! Você subiu para o nível ${level}!`);
+        updateXPDisplay();
+      }
+    }
+
+    // Função para iniciar o quiz (MODIFICADA)
+    function initializeQuiz() {
+      // Recupera progresso salvo (NOVO)
+      const savedProgress = localStorage.getItem('quizProgress');
+      if (savedProgress) {
+        const progress = JSON.parse(savedProgress);
+        xp = progress.xp;
+        level = progress.level;
+        updateXPDisplay();
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const subject = urlParams.get('subject');
+
+      if (subject === 'constitucional') {
+        questions = shuffleArray(window.questionsconstitucional);
+        document.getElementById('quiz-title').textContent = "Prova de Direito Constitucional";
+      } else if (subject === 'romano') {
+        questions = shuffleArray(window.questionsromano);
+        document.getElementById('quiz-title').textContent = "Prova de Direito Romano";
+      } else {
+        window.location.href = "select.html";
+        return;
+      }
+
+      // Configura botões
+      document.getElementById('restart-btn').addEventListener('click', () => window.location.reload());
+      document.getElementById('back-btn').addEventListener('click', () => window.location.href = "select.html");
+
+      // Inicia a primeira questão
+      showQuestion();
+    }
+
+    // Função para exibir a questão
+    function showQuestion() {
+      clearInterval(timer);
+      timeLeft = 60;
+
+      // Remove timer anterior
+      const existingTimer = document.getElementById('timer');
+      if (existingTimer) existingTimer.remove();
+
+      // Exibe a questão
+      const q = questions[currentQuestion];
+      questionElement.innerHTML = q.question;
+      optionsElement.innerHTML = '';
+
+      // Cria o timer
+      const timerElement = document.createElement('div');
+      timerElement.className = 'timer';
+      timerElement.id = 'timer';
+      timerElement.textContent = `Tempo restante: ${timeLeft}s`;
+      questionElement.after(timerElement);
+
+      // Embaralha e exibe as opções
+      q.options.sort(() => Math.random() - 0.5).forEach(option => {
+        const button = document.createElement('button');
+        button.innerHTML = option;
+        button.onclick = () => checkAnswer(option);
+        optionsElement.appendChild(button);
+      });
+
+      // Inicia o timer
+      startTimer();
+    }
+
+    // Função do timer
+    function startTimer() {
+      const timerElement = document.getElementById('timer');
+      timer = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = `Tempo restante: ${timeLeft}s`;
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          checkAnswer(null);
+        }
+      }, 1000);
+    }
+
+    // Função para verificar resposta (MODIFICADA)
+    function checkAnswer(selected) {
+      clearInterval(timer);
+      const correctAnswer = questions[currentQuestion].correct;
+      const buttons = document.querySelectorAll('#options button');
+
+      buttons.forEach(button => {
+        button.disabled = true;
+        if (button.innerHTML === correctAnswer) {
+          button.classList.add('correct');
+        } else if (button.innerHTML === selected) {
+          button.classList.add('wrong');
+        }
+      });
+
+      if (selected === correctAnswer) {
+        score++;
+        xp += XP_PER_QUESTION; // Adiciona XP (NOVO)
+        localStorage.setItem('quizProgress', JSON.stringify({ xp, level })); // Salva (NOVO)
+        updateXPDisplay(); // Atualiza a barra (NOVO)
+      }
+
+      scoreElement.innerHTML = `Pontuação: ${score}/${questions.length}`;
+
+      setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          showQuestion();
+        } else {
+          endQuiz();
+        }
+      }, 2000);
+    }
+    // Finaliza o quiz (MODIFICADA)
+    function endQuiz() {
+      questionElement.innerHTML = "Prova Concluída!";
+      optionsElement.innerHTML = '';
+      document.getElementById('timer')?.remove();
+      scoreElement.innerHTML = `Pontuação Final: ${score}/${questions.length}<br>${getPerformanceMessage(score, questions.length)}`;
+      
+      // Salva o progresso final (NOVO)
+      localStorage.setItem('quizProgress', JSON.stringify({ xp, level }));
+    }
+
+    // ... (MANTENHA AS OUTRAS FUNÇÕES EXISTENTES: shuffleArray, showQuestion, startTimer, getPerformanceMessage)
+
+    window.onload = initializeQuiz;
+  </script>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>Quiz Educacional © 2025 Diego Avila. Todos os direitos reservados.</p>
+    
+    </div>
+  </footer>
+</body>
+</html>
