@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Jurídico | Diego Avila</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="menu-container">
+    <div class="logo-header">
+      <h1>Quiz Jurídico</h1>
+      <p>Teste seus conhecimentos em Direito</p>
+    </div>
+    
+    <div class="subject-selection">
+      <h2>Selecione a Matéria:</h2>
+      <select id="subject-select" class="subject-select">
+        <option value="">-- Escolha --</option>
+        <option value="constitucional">Direito Constitucional</option>
+        <option value="romano">Direito Romano</option>
+      </select>
+      <button id="start-btn" class="start-btn">Iniciar Quiz</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2023 Diego Avila. Todos os direitos reservados.</p>
+      <p>Projeto acadêmico - Não substitui consultoria jurídica</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.getElementById('start-btn').addEventListener('click', () => {
+      const subject = document.getElementById('subject-select').value;
+      if (subject) {
+        window.location.href = `quiz.html?subject=${subject}`;
+      } else {
+        alert("Por favor, selecione uma matéria!");
+      }
+    });
+  </script>
+</body>
+</html>
