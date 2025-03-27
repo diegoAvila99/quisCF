@@ -79,38 +79,45 @@
     }
 
     // Função para iniciar o quiz (MODIFICADA)
-    function initializeQuiz() {
-      // Recupera progresso salvo (NOVO)
-      const savedProgress = localStorage.getItem('quizProgress');
-      if (savedProgress) {
-        const progress = JSON.parse(savedProgress);
-        xp = progress.xp;
-        level = progress.level;
-        updateXPDisplay();
-      }
+function initializeQuiz() {
+  // Recupera progresso salvo
+  const savedProgress = localStorage.getItem('quizProgress');
+  if (savedProgress) {
+    const progress = JSON.parse(savedProgress);
+    xp = progress.xp;
+    level = progress.level;
+    updateXPDisplay();
+  }
 
-      const urlParams = new URLSearchParams(window.location.search);
-      const subject = urlParams.get('subject');
+  const urlParams = new URLSearchParams(window.location.search);
+  const subject = urlParams.get('subject');
 
-      if (subject === 'constitucional') {
-        questions = shuffleArray(window.questionsconstitucional);
-        document.getElementById('quiz-title').textContent = "Prova de Direito Constitucional";
-      } else if (subject === 'romano') {
-        questions = shuffleArray(window.questionsromano);
-        document.getElementById('quiz-title').textContent = "Prova de Direito Romano";
-      } else {
-        window.location.href = "select.html";
-        return;
-      }
+  // Novo: Função para selecionar N questões aleatórias sem repetição
+  const getRandomQuestions = (questionPool, count) => {
+    const shuffled = [...questionPool].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
 
-      // Configura botões
-      document.getElementById('restart-btn').addEventListener('click', () => window.location.reload());
-      document.getElementById('back-btn').addEventListener('click', () => window.location.href = "select.html");
+  if (subject === 'constitucional') {
+    // Modificado: Seleciona apenas 10 questões aleatórias
+    questions = getRandomQuestions(window.questionsconstitucional, 10);
+    document.getElementById('quiz-title').textContent = "Prova de Direito Constitucional";
+  } else if (subject === 'romano') {
+    // Modificado: Seleciona apenas 10 questões aleatórias
+    questions = getRandomQuestions(window.questionsromano, 10);
+    document.getElementById('quiz-title').textContent = "Prova de Direito Romano";
+  } else {
+    window.location.href = "select.html";
+    return;
+  }
 
-      // Inicia a primeira questão
-      showQuestion();
-    }
+  // Configura botões
+  document.getElementById('restart-btn').addEventListener('click', () => window.location.reload());
+  document.getElementById('back-btn').addEventListener('click', () => window.location.href = "select.html");
 
+  // Inicia a primeira questão
+  showQuestion();
+}
     // Função para exibir a questão
     function showQuestion() {
       clearInterval(timer);
