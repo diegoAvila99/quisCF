@@ -1,12 +1,12 @@
 /* styles.css */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #34495e;
-    --accent-color: #e74c3c;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --correct-color: #27ae60;
-    --wrong-color: #e74c3c;
+    --primary-color: #e2a92c; /* Novo azul principal */
+    --secondary-color: #1d7224; /* Azul mais escuro */
+    --accent-color: #00a859; /* Verde do EDUCAC */
+    --light-color: #e6f2ff; /* Azul claro de fundo */
+    --dark-color: #002244; /* Azul quase preto */
+    --correct-color: #00a859; /* Verde (respostas corretas) */
+    --wrong-color: #e2a92c; /* Vermelho mais suave */
 }
 
 body {
@@ -19,6 +19,39 @@ body {
     color: #333;
     line-height: 1.6;
 }
+/* Sistema de XP */
+.xp-section {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+  
+  .xp-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .xp-bar {
+    flex-grow: 1;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .xp-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+    transition: width 0.5s ease;
+  }
+  
+  .xp-level {
+    font-weight: bold;
+    color: var(--primary-color);
+    min-width: 70px;
+  }
 
 #quiz-container {
     background: white;
@@ -37,7 +70,7 @@ body {
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, #e74c3c, #2c3e50);
+    background: linear-gradient(90deg, #ff0000, #2c3e50);
 }
 
 .question {
@@ -161,4 +194,131 @@ button:hover::before {
 .quiz-header p {
     color: var(--secondary-color);
     font-style: italic;
+}
+
+/* Estilo para o menu de seleção de matérias */
+.menu-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--accent-color);
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .menu-container h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2em;
+  }
+  
+  .subject-select {
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .start-btn {
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+  }
+  
+  .start-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  
+  /* Estilo para o botão Voltar à Página Principal */
+  .back-btn {
+    padding: 12px 25px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+  }
+  
+  .back-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  
+  /* Container para os botões de Reiniciar e Voltar */
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    body {
+        padding: 15px;
+        background-image: none; /* Remove padrão de fundo em mobile */
+    }
+
+    #quiz-container {
+        padding: 20px;
+    }
+
+    .question {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .quiz-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .restart-btn, 
+    .back-btn {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .menu-container {
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .subject-select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .xp-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .xp-bar {
+        width: 100%;
+    }
 }
