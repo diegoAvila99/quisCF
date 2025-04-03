@@ -32,6 +32,7 @@
   <!-- Carrega as questões primeiro -->
   <script src="qconstitucional.js"></script>
   <script src="qromano.js"></script>
+  <script src="qcienciapolitica.js"></script>
 
   <!-- Lógica do quiz -->
   <script>
@@ -97,15 +98,18 @@ function initializeQuiz() {
     const shuffled = [...questionPool].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
   };
-
-  if (subject === 'constitucional') {
-    // Modificado: Seleciona apenas 10 questões aleatórias
+// Modificado: Seleciona apenas 10 questões aleatórias
+  if (subject === 'constitucional') { 
     questions = getRandomQuestions(window.questionsconstitucional, 10);
     document.getElementById('quiz-title').textContent = "Prova de Direito Constitucional";
+
   } else if (subject === 'romano') {
-    // Modificado: Seleciona apenas 10 questões aleatórias
     questions = getRandomQuestions(window.questionsromano, 10);
     document.getElementById('quiz-title').textContent = "Prova de Direito Romano";
+    
+  } else if (subject === 'cienciapolitica') {
+    questions = getRandomQuestions(window.questionscienciapolitica, 10);
+    document.getElementById('quiz-title').textContent = "Prova de Ciência Política";
   } else {
     window.location.href = "select.html";
     return;
@@ -118,6 +122,7 @@ function initializeQuiz() {
   // Inicia a primeira questão
   showQuestion();
 }
+
     // Função para exibir a questão
     function showQuestion() {
       clearInterval(timer);
